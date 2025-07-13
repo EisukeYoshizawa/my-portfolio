@@ -1,0 +1,35 @@
+.task-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.menu {
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  position: absolute;
+  top: 24px;
+  right: 0;
+  display: none;
+  z-index: 1;
+}
+
+.menu li {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.menu li:hover {
+  background: #ddd;
+}
