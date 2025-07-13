@@ -1,35 +1,93 @@
-.task-wrapper {
+/* style.css */
+body {
+  font-family: sans-serif;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  background: #f9f9f9;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="date"],
+button {
+  padding: 8px;
+  margin: 5px;
+  font-size: 16px;
+}
+
+ul#taskList {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-left: 4px solid #00aaff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  animation: fadeIn 0.3s ease-in;
+  transition: opacity 0.3s, transform 0.3s;
 }
 
+li.fading-out {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+.task-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.due-info {
+  color: #777;
+  font-size: 0.9em;
+}
+
+/* 三点ボタンのメニュー */
 .menu-btn {
-  background: none;
+  background: transparent;
   border: none;
-  cursor: pointer;
   font-size: 18px;
+  cursor: pointer;
 }
 
 .menu {
-  list-style: none;
-  padding: 5px;
-  margin: 0;
-  background: #f0f0f0;
-  border: 1px solid #ccc;
   position: absolute;
-  top: 24px;
-  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px;
+  list-style: none;
+  margin: 0;
   display: none;
-  z-index: 1;
 }
 
 .menu li {
   padding: 5px 10px;
   cursor: pointer;
 }
-
 .menu li:hover {
-  background: #ddd;
+  background-color: #eee;
 }
+
+/* チェック完了アニメーション */
+span.completed {
+  text-decoration: line-through;
+}
+
+li.fading-out {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+
