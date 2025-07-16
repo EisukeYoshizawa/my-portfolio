@@ -3,15 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <title>リスト</title>
-  <link rel="stylesheet" href="projects/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>ToDoリスト</h1>
 
-  <input type="text" id="taskInput" placeholder="やることを入力">
-  <input type="date" id="dueDateInput">
+<div class="input-row">
+  <input type="text" id="taskInput" placeholder="やることを入力しましょう（例：買い物や勉強など）">
+  <label for="dueDateInput" class="date-label">
+    <input type="date" id="dueDateInput" />
+  </label>  
   <button onclick="addTask()">追加</button>
   <button onclick="clearTasks()">すべてクリア</button>
+</div>
+
+<div class="filter-row">
+  <label for="filterSelect">表示切り替え：</label>
+  <select id="filterSelect" onchange="onFilterChange()">
+    <option value="all">すべて表示</option>
+    <option value="today">今日のタスク</option>
+    <option value="week">今週のタスク</option>
+  </select>
+
+  <label style="display: flex; align-items: center; gap: 5px;">
+    <input type="checkbox" id="hideCompletedToggle" onchange="toggleCompletedTasks()" />
+    完了タスクを非表示
+  </label>
+</div>
+
+  
 
   <ul id="taskList"></ul>
 

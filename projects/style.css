@@ -2,23 +2,71 @@
 body {
   font-family: sans-serif;
   padding: 20px;
-  max-width: 600px;
   margin: auto;
   background: #f9f9f9;
 }
 
 h1 {
-  text-align: center;
+  text-align: left;
   margin-bottom: 20px;
 }
 
-input[type="text"],
-input[type="date"],
-button {
-  padding: 8px;
-  margin: 5px;
-  font-size: 16px;
+.input-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+  align-items: center;
+  width: 100%;
 }
+
+.input-row input[type="text"] {
+  flex: 1;
+  min-width: 250px;
+  max-width: 400px; /* ← 最大幅を制限 */
+  width: 100%;
+  height: 30px; 
+}
+
+
+.input-row input[type="date"] {
+  width: 150px;
+  height: 30px; 
+}
+
+.input-row button {
+  padding: 4px 10px;
+  font-size: 14px;
+  height: 30px;
+}
+
+.date-label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.filter-row {
+  margin-bottom: 20px;
+  display: flex; /* ← 追加 */
+  gap: 10px;
+  align-items: center;
+}
+
+
+@media screen and (max-width: 600px) {
+  .input-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-row {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+
 
 ul#taskList {
   list-style: none;
@@ -84,10 +132,37 @@ span.completed {
   text-decoration: line-through;
 }
 
-li.fading-out {
-  opacity: 0;
-  transform: translateX(100px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+
+/* デフォルト（PC画面用） */
+body {
+  font-size: 18px;
+}
+
+/* スマホサイズ（画面幅600px以下）なら少し大きめにする */
+@media (max-width: 600px) {
+  body {
+    font-size: 28px;
+  }
+
+  li {
+    font-size: 28px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  input,
+  button {
+    font-size: 20px;
+  }
+}
+
+.edit-btn {
+  margin-left: 8px;
+  font-size: 12px;
+  padding: 2px 6px;
+  cursor: pointer;
 }
 
 
